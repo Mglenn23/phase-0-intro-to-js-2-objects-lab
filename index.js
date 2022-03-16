@@ -3,25 +3,29 @@ const employee = {};
 employee.name = "Mich";
 employee["streetAddress"] = "Citra Garden 2";
 
-function updateEmployeeWithKeyAndValue(obj, key, value) {
-  const cloneEmployee = { ...obj };
+function updateEmployeeWithKeyAndValue(employee, key, value) {
+  const cloneEmployee = { ...employee };
   cloneEmployee[key] = value;
   return cloneEmployee;
 }
 
-function destructivelyUpdateEmployeeWithKeyAndValue(obj, key, val) {
-  obj[key] = val;
-  return obj;
+function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
+  employee[key] = value;
+  return employee;
 }
 
-function deleteFromEmployeeByKey(obj, key, val) {
-  const cloneEmployee = { ...obj };
-  cloneEmployee[key] = val;
-  delete cloneEmployee.key;
+function deleteFromEmployeeByKey(employee, key) {
+  const cloneEmployee = { ...employee };
+  //   cloneEmployee[key];
+  delete cloneEmployee[key];
   return cloneEmployee;
+  //   return {
+  //     ...employee.key,
+  //     delete: key,
+  //   };
 }
 
-function destructivelyDeleteFromEmployeeByKey(obj, key, val) {
-  delete obj[key];
-  return obj;
+function destructivelyDeleteFromEmployeeByKey(employee, key) {
+  delete employee[key];
+  return employee;
 }
